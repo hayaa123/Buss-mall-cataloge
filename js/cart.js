@@ -6,9 +6,12 @@ const table = document.getElementById('cart');
 table.addEventListener('click', removeItemFromCart);
 let cart;
 
+
 function loadCart() {
   const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
   cart = new Cart(cartItems);
+  // console.log(cartItems.length)
+  console.log(cart)
 }
 
 // Make magic happen --- re-pull the Cart, clear out the screen and re-draw it
@@ -19,10 +22,47 @@ function renderCart() {
 }
 
 // TODO: Remove all of the rows (tr) in the cart table (tbody)
-function clearCart() {}
+
+function clearCart() {
+  // let tableHeaderRowCount = 1;
+  // let rowCOUNT = table.rows.length;
+  // for (let i = tableHeaderRowCount ; i< rowCOUNT ; i++){
+  //   table.deleteRow(tableHeaderRowCount);
+  // }
+  // for (let i=0 ; i< cartItems.length ; i++ ) {
+  //   document.getElementById("cart").deleteRow(i);
+
+  // }
+
+
+}
+
+loadCart();
+clearCart();
+// console.log(cart);
 
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
 function showCart() {
+
+  let tb = document.getElementByTagName("tbody")
+  for (let i = 0; i < cart.items.length; i++) {
+
+    var row = document.createElement("tr");
+
+
+    tb.appendchild(row);
+    let td1 =document.createElement("td")
+    let td2 =document.createElement("td")
+    let td3 =document.createElement("td")
+    td1.textContent="X";
+    td2.textContent=cart.items[i].quantity;
+    td3.textContent=cart.items[i].product;
+    row.appendChild(td1)
+    row.appendChild(td2)
+    row.appendChild(td3)
+
+  }
+
 
   // TODO: Find the table body
 
