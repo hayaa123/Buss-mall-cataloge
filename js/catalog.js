@@ -71,10 +71,17 @@ function updateCounter() {
 function updateCartPreview() {
   // TODO: Get the item and quantity from the form
   // TODO: Add a new element to the cartContents div with that information
-  item =   
-  let cardcontent = getElementById('cart-container');
-  
+  const selectElement = document.getElementById('items');
+  let index = selectElement.selectedIndex
+  let selected_op = document.getElementsByTagName('option')[index].value  ;
+  let quantity = document.getElementById('quantity').value ;
 
+
+  let p = document.createElement('p')
+  p.textContent = `${selected_op}       quantity: ${quantity}`
+
+  let cardcontent = document.getElementById('cartContents');
+  cardcontent.appendChild(p)
 
 }
 
