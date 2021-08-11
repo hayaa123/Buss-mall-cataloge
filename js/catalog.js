@@ -47,7 +47,6 @@ function addSelectedItemToCart() {
   let quantity = document.getElementById('quantity').value ;
 
   cart.addItem(selected_op ,quantity);
-  return selected_op ,quantity
   
 }
 

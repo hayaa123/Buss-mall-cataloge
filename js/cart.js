@@ -24,6 +24,9 @@ function renderCart() {
 // TODO: Remove all of the rows (tr) in the cart table (tbody)
 
 function clearCart() {
+
+  // let table = document.getElementById("cart")
+  // table.empty()
   // let tableHeaderRowCount = 1;
   // let rowCOUNT = table.rows.length;
   // for (let i = tableHeaderRowCount ; i< rowCOUNT ; i++){
@@ -44,13 +47,13 @@ clearCart();
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
 function showCart() {
 
-  let tb = document.getElementByTagName("tbody")
+  let tb = document.querySelector("tbody")
   for (let i = 0; i < cart.items.length; i++) {
 
     var row = document.createElement("tr");
 
 
-    tb.appendchild(row);
+    tb.appendChild(row);
     let td1 =document.createElement("td")
     let td2 =document.createElement("td")
     let td3 =document.createElement("td")
@@ -74,7 +77,8 @@ function showCart() {
 }
 
 function removeItemFromCart(event) {
-
+    // var i = r.parentNode.parentNode.rowIndex;
+    // document.getElementById("myTable").deleteRow(i);
   // TODO: When a delete link is clicked, use cart.removeItem to remove the correct item
   // TODO: Save the cart back to local storage
   // TODO: Re-draw the cart table
